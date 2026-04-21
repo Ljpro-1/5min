@@ -200,8 +200,7 @@ h1, h2 {
   const db = getFirestore(app);
 
   // fonctions existantes
-  import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
-
+  import { collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 window.hijery = async function(){
 
   // garder ton code
@@ -237,9 +236,34 @@ window.retour = function(){
   document.getElementById("pageContact").style.display = "none";
   document.getElementById("pageApropos").style.display = "none";
 }
-window.envoyer = function() {
-  document.getElementById("msg").innerHTML = "✅ Message envoyé !";
-}
+window.envoyer = async function() {
+
+  let nom = document.querySelector("input[placeholder='Nom']").value;
+  let phone = document.querySelector("input[placeholder='Téléphone']").value;
+  let email = document.querySelector("input[placeholder='Email']").value;
+  let message = document.querySelector("textarea").value;
+
+  if(!nom || !message){
+    alert("⚠️ Remplis au moins le nom et le message");
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "messages"), {
+      nom: nom,
+      telephone: phone,
+      email: email,
+      message: message,
+      date: new Date()
+    });
+
+    document.getElementById("msg").innerHTML = "✅ Message envoyé !";
+
+  } catch(e){
+    document.getElementById("msg").innerHTML = "❌ Erreur envoi";
+    console.error(e);
+  }
+  }
 </script>
 <div class="box" id="pageContact" style="display:none;">
 
