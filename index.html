@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="mg">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
+<link rel="icon" href="icon.png">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,6 +116,9 @@ h1, h2 {
   </button>
 <button class="btn btn2" onclick="contact()">📞 Contact</button>
 <button class="btn btn2" onclick="apropos()">ℹ️ À propos</button>
+  <button class="btn btn1" id="installBtn" style="display:none;">
+  📲 Installer l’application
+  </button>
 </div>
 
 <!-- PAGE HIJERY -->
@@ -291,5 +297,39 @@ window.envoyer = async function() {
   <button class="btn btn1" onclick="retour()">⬅️ Hiverina</button>
 
 </div>
+  <script>
+let deferredPrompt;
+
+// Enregistrer service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+
+// Détecter possibilité d'installation
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  document.getElementById("installBtn").style.display = "block";
+});
+
+// Clic bouton
+document.getElementById("installBtn").addEventListener("click", async () => {
+
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  if (outcome === "accepted") {
+    console.log("✅ App installée");
+  } else {
+    console.log("❌ Installation refusée");
+  }
+
+  deferredPrompt = null;
+});
+  </script>
 </body>
 </html>
