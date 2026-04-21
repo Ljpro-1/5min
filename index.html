@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIMY MINITRAN'NY ANKIZY</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  
+  display: block;        /* 🔥 change ça */
+  height: auto;          /* 🔥 important */
+  overflow: auto;        /* 🔥 permet scroll */
+}
+/* CONTAINER */
+.box {
+  position: relative;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease;
+
+  display: block;        /* 🔥 IMPORTANT */
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITRE */
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+/* TEXTE */
+.salutation {
+  margin-bottom: 15px;
+}
+
+.verse {
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* BOUTONS */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn1 {
+  background: #FFD54F;
+  color: #333;
+}
+
+.btn2 {
+  background: #FF8A65;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+</style>
+
+</head>
+<body>
+
+<!-- PAGE ACCUEIL -->
+<div class="box" id="home">
+
+  <h1>📖 DIMY MINITRAN'NY ANKIZY</h1>
+
+  <p class="salutation">
+    Manonona ny fiadanan'ny Tompo aminao sy ny ankohonanao 🙏
+  </p>
+
+  <div class="verse">
+    “Zaro amin'ny lalana tokony alehany ny zaza; 
+    na dia rehefa antitra aza izy dia tsy hiala amin'izany.”
+    <br><br>
+    <small>— Ohabolana 22:6</small>
+  </div>
+
+  <button class="btn btn1" onclick="hijery()">
+    📚 Hijery 5 minitra
+  </button>
+
+  <button class="btn btn2" onclick="alert('Vavaka ho avy')">
+    🙏 Vavaka androany
+  </button>
+<button class="btn btn2" onclick="contact()">📞 Contact</button>
+<button class="btn btn2" onclick="apropos()">ℹ️ À propos</button>
+</div>
+
+<!-- PAGE HIJERY -->
+<div class="box" id="pageHijery" style="display:none;">
+
+  <h2>📚 Hijery 5 minitra</h2>
+
+  <div class="verse">
+    🌟 <b>TENIN'ANDRIAMANITRA</b> 🌟 <br><br>
+    📖 Ohabolana 22:6 <br><br>
+    “Zaro amin'ny lalana tokony alehany ny zaza,  
+    na dia rehefa antitra aza izy dia tsy hiala amin'izany.”
+  </div>
+
+  <div class="verse">
+    📚 <b>TANTARA KELY</b> 🍎 <br><br>
+
+    Indray andro, nisy rangahy lehibe iray namboly paoma 🌳🍎.<br><br>
+
+    Rehefa nanomboka nisy voniny ilay hazo dia nisy paoma kely iray tafiditra tao anaty tavoangy 🫙.<br><br>
+
+    Mbola kely ilay paoma dia tafiditra tao amin'ny vavan'ilay tavoangy, ary nitombo tao anatiny.<br><br>
+
+    Nandalo ny fotoana ⏳... nitombo ny paoma rehetra 🍎🍎🍎.<br><br>
+
+    rehefa lehibe anefa ireo paoma dia simba noho ny biby kely 🐛❌<br>
+    Fa ilay tao anaty tavoangy kosa tsy voakasika mihitsy ✅<br><br>
+
+    Satria narovan'ilay tavoangy izy 🛡️<br><br>
+
+    Ary dia nitoetra soa aman-tsara tao anatiny nandritra ny fotoana ela ⏳
+  </div>
+  
+<div class="verse">
+    🎯 <b>NY LESONA</b><br><br>
+
+    👶 Tahaka ireo paoma ny zaza<br>
+    🫙 Ny tavoangy dia TENIN'ANDRIAMANITRA<br><br>
+
+    Raha ampidirina ao ny zaza dia mitombo ao anatiny izy<br>
+    Ary voaaro amin'ny ratsy rehetra 💪
+  </div>
+
+  <div class="verse">
+    📢 <b>HAFATRA</b><br><br>
+
+    🙏 Avelao ny zaza:<br>
+    - hianatra Sekoly Alahady ⛪<br>
+    - hianatra ny Tenin'Andriamanitra 📖<br><br>
+
+    ✨ Izany no hiaro azy mandritra ny fiainany rehetra
+  </div>
+
+  <div id="story"></div>
+
+  <button class="btn btn1" onclick="retour()">
+    ⬅️ Hiverina
+  </button>
+
+</div>
+
+
+
+  
+
+
+<!-- 🔥 FIREBASE (TON CODE EXACT) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBpDBZ7JFU9Yap2wfL2ywrvXr8Rb3GN52M",
+    authDomain: "minitra-2f3e1.firebaseapp.com",
+    projectId: "minitra-2f3e1",
+    storageBucket: "minitra-2f3e1.firebasestorage.app",
+    messagingSenderId: "554335300954",
+    appId: "1:554335300954:web:771e12ed06d9e366b39763",
+    measurementId: "G-9MQE46CJDE"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  // fonctions existantes
+  import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+
+window.hijery = async function(){
+
+  // garder ton code
+  document.getElementById("home").style.display = "none";
+  document.getElementById("pageHijery").style.display = "block";
+
+  // 🔥 ajouter Firebase
+  let s = await getDocs(collection(db, "stories"));
+  let data = s.docs[0].data();
+
+  // afficher dans la page
+  document.getElementById("story").innerHTML =
+    "<b>" + data.title + "</b><br><br>" + data.content;
+};
+
+  window.retour = function(){
+    document.getElementById("home").style.display = "block";
+    document.getElementById("pageHijery").style.display = "none";
+  }
+  window.contact = function(){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("pageContact").style.display = "block";
+}
+
+window.apropos = function(){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("pageApropos").style.display = "block";
+}
+
+window.retour = function(){
+  document.getElementById("home").style.display = "block";
+  document.getElementById("pageHijery").style.display = "none";
+  document.getElementById("pageContact").style.display = "none";
+  document.getElementById("pageApropos").style.display = "none";
+}
+window.envoyer = function() {
+  document.getElementById("msg").innerHTML = "✅ Message envoyé !";
+}
+</script>
+<div class="box" id="pageContact" style="display:none;">
+
+  <h2>📞 Contact</h2>
+
+  <input placeholder="Nom"><br><br>
+  <input placeholder="Téléphone"><br><br>
+  <input placeholder="Email"><br><br>
+  <textarea placeholder="Message"></textarea><br><br>
+
+<button class="btn btn1" onclick="envoyer()">Envoyer</button>
+<p id="msg"></p>
+  <button class="btn btn2" onclick="retour()">⬅️ Hiverina</button>
+
+</div>
+<div class="box" id="pageApropos" style="display:none;">
+
+  <h2>ℹ️ À propos</h2>
+
+  <p>
+    Toerana natao izarana 5 minitra ho an'ny sekoly alahady.<br><br>
+    Afaka ampiasainao ampatoriana zaza ihany koa 👶✨
+  </p>
+
+  <button class="btn btn1" onclick="retour()">⬅️ Hiverina</button>
+
+</div>
+</body>
+</html>
