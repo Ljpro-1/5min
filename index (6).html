@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="mg">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
+<link rel="icon" href="icon.png">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIMY MINITRAN'NY ANKIZY</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ece5dd; /* WhatsApp background */
+  color: #111;
+}
+/* CONTAINER */
+.box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 18px;
+  width: 95%;
+  max-width: 420px;
+  margin: 20px auto;
+  text-align: left;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITRE */
+h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* TEXTE */
+.salutation {
+  margin-bottom: 15px;
+}
+
+.verse {
+  background: #dcf8c6; /* vert WhatsApp */
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* petite queue bulle */
+.verse::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-right: 10px solid #dcf8c6;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+/* BOUTONS */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  background: #25d366; /* WhatsApp green */
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.btn1 {
+  background: #FFD54F;
+  color: #333;
+}
+
+.btn2 {
+  background: #FF8A65;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+</style>
+
+</head>
+<body>
+
+<!-- PAGE ACCUEIL -->
+<div class="box" id="home">
+
+  <h1>📖 DIMY MINITRAN'NY ANKIZY</h1>
+
+  <p class="salutation">
+    Manonona ny fiadanan'ny Tompo aminao sy ny ankohonanao 🙏
+  </p>
+
+  <div class="verse">
+    “Zaro amin'ny lalana tokony alehany ny zaza; 
+    na dia rehefa antitra aza izy dia tsy hiala amin'izany.”
+    <br><br>
+    <small>— Ohabolana 22:6</small>
+  </div>
+
+  <button class="btn btn1" onclick="hijery()">
+    📚 Hijery 5 minitra
+  </button>
+  
+
+  <button class="btn btn2" onclick="alert('Vavaka ho avy')">
+    🙏 Vavaka androany
+  </button>
+<button class="btn btn2" onclick="contact()">📞 Contact</button>
+<button class="btn btn2" onclick="apropos()">ℹ️ À propos</button>
+<button class="btn btn2" onclick="openAdd()">
+  ✍️ Ampitra 5 minitra
+</button>
+  <button class="btn btn1" id="installBtn" style="display:none;">
+  📲 Installer l’application
+  </button>
+</div>
+
+<!-- PAGE HIJERY -->
+<div class="box" id="pageHijery" style="display:none;">
+
+  <h2>📚 Hijery 5 minitra</h2>
+
+  <div class="verse">
+    🌟 <b>TENIN'ANDRIAMANITRA</b> 🌟 <br><br>
+    📖 Ohabolana 22:6 <br><br>
+    “Zaro amin'ny lalana tokony alehany ny zaza,  
+    na dia rehefa antitra aza izy dia tsy hiala amin'izany.”
+  </div>
+
+  <div class="verse">
+    📚 <b>TANTARA KELY</b> 🍎 <br><br>
+
+    Indray andro, nisy rangahy lehibe iray namboly paoma 🌳🍎.<br><br>
+
+    Rehefa nanomboka nisy voniny ilay hazo dia nisy paoma kely iray tafiditra tao anaty tavoangy ka tao anaty tavoangy izy no nitombo 🫙.<br><br>
+
+    Mbola kely ilay paoma dia tafiditra tao amin'ny vavan'ilay tavoangy..<br><br>
+
+    Nandalo ny fotoana ⏳... nitombo ny paoma rehetra 🍎🍎🍎.<br><br>
+
+    rehefa lehibe anefa ireo paoma dia simba noho ny biby kely 🐛❌<br>
+    Fa ilay tao anaty tavoangy kosa tsy voakasika mihitsy ✅<br><br>
+
+    Satria narovan'ilay tavoangy izy 🛡️<br><br>
+
+    Ary dia nitoetra soa aman-tsara tao anatiny nandritra ny fotoana ela ⏳
+  </div>
+  
+<div class="verse">
+    🎯 <b>NY LESONA</b><br><br>
+
+    👶 Tahaka ireo paoma ny zaza<br>
+    🫙 Ny tavoangy dia TENIN'ANDRIAMANITRA<br><br>
+
+    Raha ampidirina ao ny zaza dia mitombo ao anatiny izy<br>
+    Ary voaaro amin'ny ratsy rehetra 💪
+  </div>
+
+  <div class="verse">
+    📢 <b>HAFATRA</b><br><br>
+
+    🙏 Avelao ny zaza:<br>
+    - hianatra Sekoly Alahady ⛪<br>
+    - hianatra ny Tenin'Andriamanitra 📖<br><br>
+
+    ✨ Izany no hiaro azy mandritra ny fiainany rehetra
+  </div>
+
+  <div id="story"></div>
+
+  <button class="btn btn1" onclick="retour()">
+    ⬅️ Hiverina
+  </button>
+
+</div>
+
+
+
+  
+
+
+<!-- 🔥 FIREBASE (TON CODE EXACT) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBpDBZ7JFU9Yap2wfL2ywrvXr8Rb3GN52M",
+    authDomain: "minitra-2f3e1.firebaseapp.com",
+    projectId: "minitra-2f3e1",
+    storageBucket: "minitra-2f3e1.firebasestorage.app",
+    messagingSenderId: "554335300954",
+    appId: "1:554335300954:web:771e12ed06d9e366b39763",
+    measurementId: "G-9MQE46CJDE"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  // fonctions existantes
+  import { collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+  window.likeStory = async function(id){
+
+  let ref = doc(db, "stories", id);
+
+  await updateDoc(ref, {
+    likes: increment(1)
+  });
+
+}
+window.hijery = async function(){
+
+  // garder ton code
+  document.getElementById("home").style.display = "none";
+  document.getElementById("pageHijery").style.display = "block";
+
+  // 🔥 ajouter Firebase
+  let s = await getDocs(collection(db, "stories"));
+  let html = "";
+
+s.forEach(docSnap => {
+
+  let data = docSnap.data();
+  let id = docSnap.id;
+
+  html += `
+    <div class="verse">
+
+      <b>${data.title}</b><br>
+
+      <small>✍️ ${data.author || "Anonyme"}</small><br><br>
+
+      ${data.content}<br><br>
+
+      ❤️ ${data.likes || 0}
+
+      <br>
+
+      <button onclick="likeStory('${id}')">
+        ❤️ Like
+      </button>
+
+    </div>
+  `;
+});
+
+document.getElementById("story").innerHTML = html;
+};
+
+  window.retour = function(){
+    document.getElementById("home").style.display = "block";
+    document.getElementById("pageHijery").style.display = "none";
+  }
+  window.contact = function(){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("pageContact").style.display = "block";
+}
+
+window.openAdd = function(){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("pageAdd").style.display = "block";
+}
+
+window.apropos = function(){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("pageApropos").style.display = "block";
+}
+
+window.retour = function(){
+  document.getElementById("home").style.display = "block";
+  document.getElementById("pageHijery").style.display = "none";
+  document.getElementById("pageContact").style.display = "none";
+  document.getElementById("pageApropos").style.display = "none";
+  document.getElementById("pageAdd").style.display = "none";
+}
+window.envoyer = async function() {
+
+  let nom = document.querySelector("input[placeholder='Nom']").value;
+  let phone = document.querySelector("input[placeholder='Téléphone']").value;
+  let email = document.querySelector("input[placeholder='Email']").value;
+  let message = document.querySelector("textarea").value;
+
+  if(!nom || !message){
+    alert("⚠️ Remplis au moins le nom et le message");
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "messages"), {
+      nom: nom,
+      telephone: phone,
+      email: email,
+      message: message,
+      date: new Date()
+    });
+
+    document.getElementById("msg").innerHTML = "✅ Message envoyé !";
+
+  } catch(e){
+    document.getElementById("msg").innerHTML = "❌ Erreur envoi";
+    console.error(e);
+  }
+  }
+  window.ajouterStory = async function(){
+
+  let author = document.getElementById("authorAdd").value;
+  let title = document.getElementById("titleAdd").value;
+  let content = document.getElementById("contentAdd").value;
+
+  if(!author || !title || !content){
+    document.getElementById("msgAdd").innerHTML = "⚠️ Fenoy daholo";
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "stories_pending"), {
+      author: author,
+      title: title,
+      content: content,
+      likes: 0,
+      createdAt: new Date()
+    });
+
+    document.getElementById("msgAdd").innerHTML = "✅ Tafiditra !";
+
+    document.getElementById("authorAdd").value = "";
+    document.getElementById("titleAdd").value = "";
+    document.getElementById("contentAdd").value = "";
+
+  } catch(e){
+    document.getElementById("msgAdd").innerHTML = "❌ Erreur";
+    console.log(e);
+  }
+
+}
+</script>
+<div class="box" id="pageContact" style="display:none;">
+
+  <h2>📞 Contact</h2>
+
+  <input placeholder="Nom"><br><br>
+  <input placeholder="Téléphone"><br><br>
+  <input placeholder="Email"><br><br>
+  <textarea placeholder="Message"></textarea><br><br>
+
+<button class="btn btn1" onclick="envoyer()">Envoyer</button>
+<p id="msg"></p>
+  <button class="btn btn2" onclick="retour()">⬅️ Hiverina</button>
+
+</div>
+<!-- PAGE ADD -->
+<div class="box" id="pageAdd" style="display:none;">
+
+  <h2>✍️ Ampitra 5 minitra</h2>
+
+  <input id="authorAdd" placeholder="Anarana"><br><br>
+
+  <input id="titleAdd" placeholder="Lohateny"><br><br>
+
+  <textarea id="contentAdd" placeholder="Soraty eto..." rows="6"></textarea><br><br>
+
+  <button class="btn" onclick="ajouterStory()">📤 Alefa</button>
+
+  <p id="msgAdd"></p>
+
+  <button class="btn btn2" onclick="retour()">⬅️ Hiverina</button>
+
+</div>
+
+<div class="box" id="pageApropos" style="display:none;">
+  
+  <h2>ℹ️ À propos</h2>
+  
+  <p>
+    Toerana natao izarana 5 minitra ho an'ny sekoly alahady.<br><br>
+    Afaka ampiasainao ampatoriana zaza ihany koa 👶✨
+  </p>
+  
+  <button class="btn btn1" onclick="retour()">⬅️ Hiverina</button>
+  
+</div>
+  <script>
+let deferredPrompt;
+
+// Enregistrer service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+
+// Détecter possibilité d'installation
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  document.getElementById("installBtn").style.display = "block";
+});
+
+// Clic bouton
+document.getElementById("installBtn").addEventListener("click", async () => {
+
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  if (outcome === "accepted") {
+    console.log("✅ App installée");
+  } else {
+    console.log("❌ Installation refusée");
+  }
+
+  deferredPrompt = null;
+});
+  </script>
+</body>
+</html>
